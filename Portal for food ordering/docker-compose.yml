@@ -1,0 +1,33 @@
+version: "3.3"
+services:
+  nginx:
+    depends_on:
+      - frontend
+      - backend
+    restart: always # because it is routing traffic to our entire app
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - '80:80'
+  mongo:
+    image: 'mongo:3.6.19-xenial'
+    ports:
+      - '27017:27017'
+    restart: on-failure
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: on-failure
+    container_name: frontend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: on-failure
+    container_name: backend
+    
+  
+      
+  
