@@ -5,9 +5,6 @@ Web application based on MERN stack - MongoDB, Express.js, React.js, and Node.js
 
 
 ## TECHNOLOGIES USED
-
-For this assignment, you are required to make a web app with:
-
 - Frontend in ​React.js
 - Backend using ​Express.js​ which implements a ​REST​ API
 - Database in ​MongoDB
